@@ -12,16 +12,24 @@ script AppDelegate
     property parent : class "NSObject"
     
     on buttonhandlerinstall_(sender)
+        try
+            do shell script "killall OpenPlex.app"
+            onerror
+            end try
         display dialog "Installing OpenPlex..." with title "OpenPlex Status"
         delay 2
-        do shell script ""
+        do shell script "cd /Applications; curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.7/OpenPlex.zip > OpenPlex.zip; ditto -xk OpenPlex.zip /Applications; rm OpenPlex.zip; open OpenPlex.app"
         do shell script "killall OpenPlex-installer"
     end buttonhandlerinstall_
     
     on buttonhandlerinstall10_(sender)
+        try
+            do shell script "killall OpenPlex.app"
+            onerror
+        end try
         display notification "Installing OpenPlex..." with title "OpenPlex Status"
         delay 2
-        do shell script ""
+        do shell script "cd /Applications; curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.6/OpenPlex.zip > OpenPlex.zip; ditto -xk OpenPlex.zip /Applications; rm OpenPlex.zip; open OpenPlex.app"
         do shell script "killall OpenPlex-installer"
     end buttonhandlerinstall10_
 	

@@ -853,7 +853,7 @@
                         </textFieldCell>
                     </textField>
                     <progressIndicator maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="bar" id="zfK-Ql-vDs">
-                        <rect key="frame" x="25" y="19" width="461" height="20"/>
+                        <rect key="frame" x="25" y="18" width="461" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="UDw-Xq-dOE">
@@ -867,7 +867,7 @@
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="175.5" y="378.5"/>
+            <point key="canvasLocation" x="207.5" y="330.5"/>
         </window>
     </objects>
     <resources>
