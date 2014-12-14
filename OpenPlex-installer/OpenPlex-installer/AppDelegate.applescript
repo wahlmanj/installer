@@ -11,11 +11,7 @@
 script AppDelegate
     property parent : class "NSObject"
     
-    property installProgressBar : missing value
-    
     on buttonhandlerinstall_(sender)
-        tell installProgressBar to startAnimation:me -- another way
-        set animated to true
         try
             do shell script "killall OpenPlex.app"
             onerror
@@ -24,13 +20,9 @@ script AppDelegate
         delay 2
         do shell script "cd /Applications; curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.7/OpenPlex.zip > OpenPlex.zip; ditto -xk OpenPlex.zip /Applications; rm OpenPlex.zip; open OpenPlex.app"
         do shell script "killall OpenPlex-installer"
-        tell installProgressBar to stopAnimation:me -- another way
-        set animated to false
     end buttonhandlerinstall_
     
     on buttonhandlerinstall10_(sender)
-        tell installProgressBar to startAnimation:me -- another way
-        set animated to true
         try
             do shell script "killall OpenPlex.app"
             onerror
@@ -39,8 +31,6 @@ script AppDelegate
         delay 2
         do shell script "cd /Applications; curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.6/OpenPlex.zip > OpenPlex.zip; ditto -xk OpenPlex.zip /Applications; rm OpenPlex.zip; open OpenPlex.app"
         do shell script "killall OpenPlex-installer"
-        tell installProgressBar to stopAnimation:me -- another way
-        set animated to false
     end buttonhandlerinstall10_
 	
 	-- IBOutlets
