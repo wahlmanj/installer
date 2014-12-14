@@ -857,7 +857,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="UDw-Xq-dOE">
-                        <rect key="frame" x="213" y="132" width="115" height="14"/>
+                        <rect key="frame" x="213" y="130" width="115" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Choose your OS" id="kAI-iY-N88">
                             <font key="font" metaFont="cellTitle"/>
