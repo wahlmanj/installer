@@ -12,36 +12,6 @@ script AppDelegate
     property parent : class "NSObject"
     
     property installProgressBar : missing value
-    
-    on buttonhandlerinstall_(sender)
-        tell installProgressBar to startAnimation:me -- another way
-        set animated to true
-        try
-        do shell script "killall OpenPlex"
-        end try
-        display dialog "Installing OpenPlex..." with title "OpenPlex Status"
-        do shell script "cd /Applications; curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.7/OpenPlex.zip > OpenPlex.zip; ditto -xk OpenPlex.zip /Applications; rm OpenPlex.zip; open OpenPlex.app"
-        display dialog "OpenPlex installed, click icon located in your menubar..." with title "OpenPlex Status"
-        do shell script "killall OpenPlex-installer"
-        tell installProgressBar to stopAnimation:me -- another way
-        set animated to false
-    end buttonhandlerinstall_
-    
-    on buttonhandlerinstall10_(sender)
-        tell installProgressBar to startAnimation:me -- another way
-        set animated to true
-        try
-        do shell script "killall OpenPlex"
-        end try
-        display notification "Installing OpenPlex..." with title "OpenPlex Status"
-        delay 0
-        do shell script "cd /Applications; curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.6/OpenPlex.zip > OpenPlex.zip; ditto -xk OpenPlex.zip /Applications; rm OpenPlex.zip; open OpenPlex.app"
-        display notification "OpenPlex installed, click icon located in your menubar..." with title "OpenPlex Status"
-        delay 0
-        do shell script "killall OpenPlex-installer"
-        tell installProgressBar to stopAnimation:me -- another way
-        set animated to false
-    end buttonhandlerinstall10_
 	
 	-- IBOutlets
 	property theWindow : missing value
@@ -51,8 +21,19 @@ script AppDelegate
         try
             do shell script "killall OpenPlex"
         end try
-        display dialog "Installing OpenPlex..." with title "OpenPlex Status"
-        do shell script "cd /Applications; curl -L https://github.com/wahlmanj/git/raw/master/python.zip > python.zip; ditto -xk python.zip /Applications; hdiutil attach /Applications/git-2.2.1-intel-universal-snow-leopard.dmg; sudo installer -pkg /Applications/python-2.7.9-macosx10.6.pkg -target /; chmod 777 /Applications/python.zip; cd /Applications; rm python.zip; chmod 777 /Applications/python-2.7.9-macosx10.6.pkg; rm /Applications/python-2.7.9-macosx10.6.pkg" with administrator privileges
+        display dialog "Installing OpenPlex, Git, and Python 2.7.9..." with title "OpenPlex Status"
+        do shell script "cd /Applications; curl -L https://github.com/wahlmanj/git/raw/master/python.zip > python.zip; ditto -xk python.zip /Applications; sudo installer -pkg /Applications/python-2.7.9-macosx10.6.pkg -target /; chmod 777 /Applications/python.zip; cd /Applications; rm python.zip; chmod 777 /Applications/python-2.7.9-macosx10.6.pkg; rm /Applications/python-2.7.9-macosx10.6.pkg" with administrator privileges
+        tell application "Finder"
+            if (exists folder "System:Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
+                do shell script "rm -R /System/Library/Frameworks/Python.framework/Versions/2.7" with administrator privileges
+            end if
+            if (exists folder "Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
+                do shell script "mv /Library/Frameworks/Python.framework/Versions/2.7 /System/Library/Frameworks/Python.framework/Versions" with administrator privileges
+            end if
+            if (exists folder "System:Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
+                do shell script "chown -R root:wheel /System/Library/Frameworks/Python.framework/Versions/2.7" with administrator privileges
+            end if
+        end tell
         do shell script "cd /Applications; curl -L https://github.com/wahlmanj/git/raw/master/git.zip > git.zip; ditto -xk git.zip /Applications; hdiutil attach /Applications/git-2.2.1-intel-universal-snow-leopard.dmg; cp /Volumes/Git\\ 2.2.1\\ Snow\\ Leopard\\ Intel\\ Universal/git-2.2.1-intel-universal-snow-leopard.pkg /Applications; sudo installer -pkg /Applications/git-2.2.1-intel-universal-snow-leopard.pkg -target /; hdiutil unmount /Volumes/Git\\ 2.2.1\\ Snow\\ Leopard\\ Intel\\ Universal; chmod 777 /Applications/git.zip; cd /Applications; rm git.zip" with administrator privileges
         do shell script "chmod 777 /Applications/git-2.2.1-intel-universal-snow-leopard.pkg" with administrator privileges
         do shell script "chmod 777 /Applications/git-2.2.1-intel-universal-snow-leopard.dmg" with administrator privileges
