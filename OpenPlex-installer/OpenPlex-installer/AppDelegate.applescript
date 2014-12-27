@@ -26,7 +26,7 @@ script AppDelegate
                 do shell script "rm -R /System/Library/Frameworks/Python.framework/Versions/2.7" with administrator privileges
             end if
             if (exists folder "Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
-                do shell script "mv /Library/Frameworks/Python.framework/Versions/2.7 /System/Library/Frameworks/Python.framework/Versions" with administrator privileges
+                do shell script "rm -R /System/Library/Frameworks/Python.framework/Versions/2.7; mkdir /System/Library/Frameworks/Python.framework/Versions/2.7; cp -r /Library/Frameworks/Python.framework/Versions/2.7/* System/Library/Frameworks/Python.framework/Versions/2.7" with administrator privileges
             end if
             if (exists folder "System:Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
                 try
