@@ -10,8 +10,6 @@
 
 script AppDelegate
     property parent : class "NSObject"
-    
-    property installProgressBar : missing value
 	
 	-- IBOutlets
 	property theWindow : missing value
@@ -31,7 +29,41 @@ script AppDelegate
                 do shell script "mv /Library/Frameworks/Python.framework/Versions/2.7 /System/Library/Frameworks/Python.framework/Versions" with administrator privileges
             end if
             if (exists folder "System:Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
+                try
                 do shell script "chown -R root:wheel /System/Library/Frameworks/Python.framework/Versions/2.7" with administrator privileges
+                end try
+                try
+                do shell script "sudo rm /System/Library/Frameworks/Python.framework/Versions/Current" with administrator privileges
+                end try
+                try
+                do shell script "sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7 /System/Library/Frameworks/Python.framework/Versions/Current" with administrator privileges
+                end try
+                try
+                do shell script "sudo rm /usr/bin/pydoc" with administrator privileges
+                end try
+                try
+                do shell script "sudo rm /usr/bin/python" with administrator privileges
+                end try
+                try
+                do shell script "sudo rm /usr/bin/pythonw" with administrator privileges
+                end try
+                try
+                do shell script "sudo rm /usr/bin/python-config" with administrator privileges
+                end try
+                try
+                do shell script "sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7/bin/pydoc /usr/bin/pydoc" with administrator privileges
+                end try
+                try
+                do shell script "sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7/bin/python /usr/bin/python" with administrator privileges
+                end try
+                try
+                do shell script "sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7/bin/pythonw /usr/bin/pythonw" with administrator privileges
+                end try
+                try
+                do shell script "sudo ln -s /System/Library/Frameworks/Python.framework/Versions/2.7/bin/python-config /usr/bin/python-config" with administrator privileges
+                end try
+
+
             end if
         end tell
         do shell script "cd /Applications; curl -L https://github.com/wahlmanj/git/raw/master/git.zip > git.zip; ditto -xk git.zip /Applications; hdiutil attach /Applications/git-2.2.1-intel-universal-snow-leopard.dmg; cp /Volumes/Git\\ 2.2.1\\ Snow\\ Leopard\\ Intel\\ Universal/git-2.2.1-intel-universal-snow-leopard.pkg /Applications; sudo installer -pkg /Applications/git-2.2.1-intel-universal-snow-leopard.pkg -target /; hdiutil unmount /Volumes/Git\\ 2.2.1\\ Snow\\ Leopard\\ Intel\\ Universal; chmod 777 /Applications/git.zip; cd /Applications; rm git.zip" with administrator privileges
