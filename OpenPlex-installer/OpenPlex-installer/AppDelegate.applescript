@@ -29,7 +29,7 @@ script AppDelegate
                 try
                 do shell script "rm -R /System/Library/Frameworks/Python.framework/Versions/2.7" with administrator privileges
                 end try
-                do shell script "mkdir /System/Library/Frameworks/Python.framework/Versions/2.7; cp -r /Library/Frameworks/Python.framework/Versions/2.7/* /System/Library/Frameworks/Python.framework/Versions/2.7" with administrator privileges
+                do shell script "ln -s /Library/Frameworks/Python.framework/Versions/2.7 /System/Library/Frameworks/Python.framework/Versions/2.7" with administrator privileges
             end if
             if (exists folder "System:Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
                 try
