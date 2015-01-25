@@ -93,7 +93,6 @@ script AppDelegate
             on error
             do shell script "cd /etc; echo '/usr/local/git/bin' | cat - paths > temp && mv temp paths" with administrator privileges
         end try
-            if not (exists folder "usr:local:git:OP" of the startup disk) then
                 tell application "Finder"
                     if (exists folder "Applications:PlexConnect:update:OSX" of the startup disk) then
                         try
@@ -137,7 +136,6 @@ script AppDelegate
                     if (exists file "Applications:plexconnect_BACKUP:settings.auto" of the startup disk) then
                         do shell script "cp /Applications/plexconnect_BACKUP/Settings.cfg /Applications/PlexConnect"
                     end if
-            end if
             try
                 do shell script "stopbash.bash"
                 do shell script "trashbasebash.bash"
@@ -160,7 +158,7 @@ script AppDelegate
         do shell script "cd /Applications/onlytemp; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone https://github.com/wahlmanj/installer.git"
         do shell script "cd /Applications/onlytemp/installer; chmod +x app.bash; ./app.bash" with administrator privileges
         do shell script "rm -R /Applications/onlytemp"
-    display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." with title "OpenPlex Status"
+        display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." with title "OpenPlex Status"
         try
             do shell script "killall OpenPlex-installer"
         end try
