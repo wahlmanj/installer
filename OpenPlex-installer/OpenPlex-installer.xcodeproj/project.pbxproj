@@ -12,9 +12,6 @@
 		CE2611591A3ADF100078C3BD /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = CE2611581A3ADF100078C3BD /* AppDelegate.applescript */; };
 		CE26115B1A3ADF100078C3BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE26115A1A3ADF100078C3BD /* Images.xcassets */; };
 		CE26115E1A3ADF100078C3BD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE26115C1A3ADF100078C3BD /* MainMenu.xib */; };
-		CE2611711A3AE0010078C3BD /* lion.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2611651A3AE0010078C3BD /* lion.png */; };
-		CE2611721A3AE0010078C3BD /* Mavericks.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2611661A3AE0010078C3BD /* Mavericks.png */; };
-		CE2611731A3AE0010078C3BD /* Mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2611671A3AE0010078C3BD /* Mountain.png */; };
 		CE2611741A3AE0010078C3BD /* opicon_<1024x1024>.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2611681A3AE0010078C3BD /* opicon_<1024x1024>.png */; };
 		CE2611751A3AE0010078C3BD /* opicon_<128x128>.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2611691A3AE0010078C3BD /* opicon_<128x128>.png */; };
 		CE2611761A3AE0010078C3BD /* opicon_<16x16>.png in Resources */ = {isa = PBXBuildFile; fileRef = CE26116A1A3AE0010078C3BD /* opicon_<16x16>.png */; };
@@ -22,8 +19,6 @@
 		CE2611781A3AE0010078C3BD /* opicon_<32x32>.png in Resources */ = {isa = PBXBuildFile; fileRef = CE26116C1A3AE0010078C3BD /* opicon_<32x32>.png */; };
 		CE2611791A3AE0010078C3BD /* opicon_<512x512>.png in Resources */ = {isa = PBXBuildFile; fileRef = CE26116D1A3AE0010078C3BD /* opicon_<512x512>.png */; };
 		CE26117A1A3AE0010078C3BD /* opicon_<64x64>.png in Resources */ = {isa = PBXBuildFile; fileRef = CE26116E1A3AE0010078C3BD /* opicon_<64x64>.png */; };
-		CE26117B1A3AE0010078C3BD /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE26116F1A3AE0010078C3BD /* snow.png */; };
-		CE26117C1A3AE0010078C3BD /* yoemite.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2611701A3AE0010078C3BD /* yoemite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +29,6 @@
 		CE2611581A3ADF100078C3BD /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
 		CE26115A1A3ADF100078C3BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE26115D1A3ADF100078C3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		CE2611651A3AE0010078C3BD /* lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lion.png; sourceTree = "<group>"; };
-		CE2611661A3AE0010078C3BD /* Mavericks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mavericks.png; sourceTree = "<group>"; };
-		CE2611671A3AE0010078C3BD /* Mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mountain.png; sourceTree = "<group>"; };
 		CE2611681A3AE0010078C3BD /* opicon_<1024x1024>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opicon_<1024x1024>.png"; sourceTree = "<group>"; };
 		CE2611691A3AE0010078C3BD /* opicon_<128x128>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opicon_<128x128>.png"; sourceTree = "<group>"; };
 		CE26116A1A3AE0010078C3BD /* opicon_<16x16>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opicon_<16x16>.png"; sourceTree = "<group>"; };
@@ -44,8 +36,6 @@
 		CE26116C1A3AE0010078C3BD /* opicon_<32x32>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opicon_<32x32>.png"; sourceTree = "<group>"; };
 		CE26116D1A3AE0010078C3BD /* opicon_<512x512>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opicon_<512x512>.png"; sourceTree = "<group>"; };
 		CE26116E1A3AE0010078C3BD /* opicon_<64x64>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opicon_<64x64>.png"; sourceTree = "<group>"; };
-		CE26116F1A3AE0010078C3BD /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
-		CE2611701A3AE0010078C3BD /* yoemite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoemite.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +99,6 @@
 		CE2611641A3AE0010078C3BD /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				CE2611651A3AE0010078C3BD /* lion.png */,
-				CE2611661A3AE0010078C3BD /* Mavericks.png */,
-				CE2611671A3AE0010078C3BD /* Mountain.png */,
 				CE2611681A3AE0010078C3BD /* opicon_<1024x1024>.png */,
 				CE2611691A3AE0010078C3BD /* opicon_<128x128>.png */,
 				CE26116A1A3AE0010078C3BD /* opicon_<16x16>.png */,
@@ -119,8 +106,6 @@
 				CE26116C1A3AE0010078C3BD /* opicon_<32x32>.png */,
 				CE26116D1A3AE0010078C3BD /* opicon_<512x512>.png */,
 				CE26116E1A3AE0010078C3BD /* opicon_<64x64>.png */,
-				CE26116F1A3AE0010078C3BD /* snow.png */,
-				CE2611701A3AE0010078C3BD /* yoemite.png */,
 			);
 			path = icons;
 			sourceTree = SOURCE_ROOT;
@@ -182,20 +167,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE26117C1A3AE0010078C3BD /* yoemite.png in Resources */,
 				CE2611741A3AE0010078C3BD /* opicon_<1024x1024>.png in Resources */,
-				CE2611731A3AE0010078C3BD /* Mountain.png in Resources */,
 				CE26115B1A3ADF100078C3BD /* Images.xcassets in Resources */,
-				CE2611721A3AE0010078C3BD /* Mavericks.png in Resources */,
 				CE2611771A3AE0010078C3BD /* opicon_<256x256>.png in Resources */,
 				CE2611761A3AE0010078C3BD /* opicon_<16x16>.png in Resources */,
 				CE26117A1A3AE0010078C3BD /* opicon_<64x64>.png in Resources */,
 				CE2611781A3AE0010078C3BD /* opicon_<32x32>.png in Resources */,
 				CE2611791A3AE0010078C3BD /* opicon_<512x512>.png in Resources */,
-				CE26117B1A3AE0010078C3BD /* snow.png in Resources */,
 				CE2611751A3AE0010078C3BD /* opicon_<128x128>.png in Resources */,
 				CE26115E1A3ADF100078C3BD /* MainMenu.xib in Resources */,
-				CE2611711A3AE0010078C3BD /* lion.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

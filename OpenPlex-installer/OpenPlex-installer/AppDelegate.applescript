@@ -19,7 +19,7 @@ script AppDelegate
         try
             do shell script "killall OpenPlex"
         end try
-        display dialog "Installing OpenPlex, Git version 2.2.1, System Wide Python version 2.7.9 (patched for your firewall if needed), this will take quite some time depending on your ISP..." with title "OpenPlex Status"
+        display dialog "Installing OpenPlex, Git version 2.2.1, System Wide Python version 2.7.9 (patched for your firewall if needed), this will take some time depending on your ISP..." with title "OpenPlex Status"
         do shell script "cd /Applications; curl -L https://github.com/wahlmanj/git/raw/master/python.zip > python.zip; ditto -xk python.zip /Applications; sudo installer -pkg /Applications/python-2.7.9-macosx10.6.pkg -target /; chmod 777 /Applications/python.zip; cd /Applications; rm python.zip; chmod 777 /Applications/python-2.7.9-macosx10.6.pkg; rm /Applications/python-2.7.9-macosx10.6.pkg" with administrator privileges
         tell application "Finder"
             if (exists folder "System:Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
@@ -115,12 +115,41 @@ script AppDelegate
                     end if
                 end tell
                 do shell script "cd /Applications; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone https://github.com/iBaa/PlexConnect.git"
-                display dialog "No OpenPlex folder detected, this will take quite some time to install..." with title "OpenPlex Status"
-                delay 0
                 try
                     do shell script "rm -R ~/Library/Application\\ Support/OpenPlex" with administrator privileges
                 end try
-                do shell script "cd ~/Library/Application\\ Support; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone https://github.com/wahlmanj/OpenPlex.git"
+                do shell script "cd ~/Library/Application\\ Support; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone --progress https://github.com/wahlmanj/OpenPlex.git > ~/Library/Application\\ Support/statusOP 2>&1 &"
+                set fileSize to 0
+                set curTransferred to 0
+                set curProgress to 0
+                set one to 0
+                set two to 0
+                set speed to 0
+                set mb to 0
+                repeat until one = "Checking"
+                    try
+                        set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
+                        set one to word 1 of lastLine
+                        set two to word 2 of lastLine
+                        set curProgress to word 3 of lastLine
+                        set fileSize to word 5 of lastLine
+                        set curTransferred to word 4 of lastLine
+                        set speed to word 9 of lastLine
+                        set mb to word 10 of lastLine
+                        tell me
+                            display dialog "Cloning OpenPlex. Please wait... 
+                            
+" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb buttons {"please wait", "cancel"} giving up after 3
+                            if the button returned of the result is "cancel" then return
+                        end tell
+                    end try
+                end repeat
+                tell me
+                    if one = "Checking" then
+                        display dialog "OpenPlex Cloning Completed, installing..." buttons {"please wait", "cancel"} giving up after 3
+                        if the button returned of the result is "cancel" then return
+                    end if
+                end tell
                 try
                     do shell script "cp -R ~/Library/Application\\ Support/OpenPlex/update /Applications/PlexConnect"
                 end try
@@ -158,6 +187,9 @@ script AppDelegate
         do shell script "cd /Applications/onlytemp; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone https://github.com/wahlmanj/installer.git"
         do shell script "cd /Applications/onlytemp/installer; chmod +x app.bash; ./app.bash" with administrator privileges
         do shell script "rm -R /Applications/onlytemp"
+        try
+            do shell script "cd ~/Library/Application\\ Support; rm statusOP"
+        end try
         display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." with title "OpenPlex Status"
         try
             do shell script "killall OpenPlex-installer"
