@@ -144,14 +144,14 @@ script AppDelegate
                         tell me
                             display dialog "Cloning OpenPlex...
                             
-" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb & "/s" buttons {"please wait", "cancel"} giving up after 3 with title "OpenPlex Status"
+" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb & "/s" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 3 with title "OpenPlex Status"
                             if the button returned of the result is "cancel" then return
                         end tell
                     end try
                 end repeat
                 tell me
                     if one = "Checking" then
-                        display dialog "OpenPlex Cloning Completed, installing..." buttons {"please wait", "cancel"} giving up after 3
+                        display dialog "OpenPlex Cloning Complete, installing..." buttons {"please wait", "cancel"} giving up after 3
                         if the button returned of the result is "cancel" then return
                     end if
                 end tell
