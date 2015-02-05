@@ -139,7 +139,7 @@ script AppDelegate
                         tell me
                             display dialog "Cloning OpenPlex...
                             
-" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb buttons {"please wait", "cancel"} giving up after 3 with title "OpenPlex Status"
+" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb & "/s" buttons {"please wait", "cancel"} giving up after 3 with title "OpenPlex Status"
                             if the button returned of the result is "cancel" then return
                         end tell
                     end try
