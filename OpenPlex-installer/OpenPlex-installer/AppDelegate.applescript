@@ -19,7 +19,12 @@ script AppDelegate
         try
             do shell script "killall OpenPlex"
         end try
-        display dialog "Installing OpenPlex, Git version 2.2.1, System Wide Python version 2.7.9 (patched for your firewall if needed), this will take some time depending on your ISP..." with title "OpenPlex Status"
+        tell me
+        display dialog "Installing OpenPlex, Git version 2.2.1, System Wide Python version 2.7.9 (patched for your firewall if needed), this will take some time depending on your ISP..." buttons {"cancel", "ok"} default button "ok" with title "OpenPlex Status"
+        if the button returned of the result is "cancel" then
+            do shell script "killall OpenPlex-installer"
+            end if
+        end tell
         do shell script "cd /Applications; curl -L https://github.com/wahlmanj/git/raw/master/python.zip > python.zip; ditto -xk python.zip /Applications; sudo installer -pkg /Applications/python-2.7.9-macosx10.6.pkg -target /; chmod 777 /Applications/python.zip; cd /Applications; rm python.zip; chmod 777 /Applications/python-2.7.9-macosx10.6.pkg; rm /Applications/python-2.7.9-macosx10.6.pkg" with administrator privileges
         tell application "Finder"
             if (exists folder "System:Library:Frameworks:Python.framework:Versions:2.7" of the startup disk) then
