@@ -167,9 +167,6 @@ script AppDelegate
                 do shell script "purgesettingsbash.bash; restart.bash"
                 do shell script "/Applications/PlexConnect/update/OSX/appwebhome.bash" with administrator privileges
                 do shell script "mkdir -p /usr/local/git/OP" with administrator privileges
-                    if (exists file "Applications:plexconnect_BACKUP:settings.auto" of the startup disk) then
-                        do shell script "cp /Applications/plexconnect_BACKUP/Settings.cfg /Applications/PlexConnect"
-                    end if
             try
                 do shell script "stopbash.bash"
                 do shell script "trashbasebash.bash"
