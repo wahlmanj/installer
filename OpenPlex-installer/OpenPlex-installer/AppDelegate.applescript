@@ -124,6 +124,14 @@ script AppDelegate
                     do shell script "rm -R ~/Library/Application\\ Support/OpenPlex" with administrator privileges
                 end try
                 do shell script "cd ~/Library/Application\\ Support; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone --progress https://github.com/wahlmanj/OpenPlex.git > ~/Library/Application\\ Support/statusOP 2>&1 &"
+                -- Compressing 
+                set curProgress to 0
+                repeat until curProgress is greater than "70"
+                    try
+                        set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
+                        set curProgress to word 3 of lastLine
+                    end try
+                end repeat
                 set fileSize to 0
                 set curTransferred to 0
                 set curProgress to 0
@@ -131,7 +139,8 @@ script AppDelegate
                 set two to 0
                 set speed to 0
                 set mb to 0
-                repeat until one = "Checking"
+                do shell script "sleep 6"
+                repeat until curProgress is greater than "85"
                     try
                         set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
                         set one to word 1 of lastLine
@@ -141,17 +150,40 @@ script AppDelegate
                         set curTransferred to word 4 of lastLine
                         set speed to word 9 of lastLine
                         set mb to word 10 of lastLine
+                        -- objects
                         tell me
                             display dialog "Cloning OpenPlex...
                             
-" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb & "/s" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 3 with title "OpenPlex Status"
+" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb & "/s" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 2.5 with title "OpenPlex Status"
+                            if the button returned of the result is "cancel" then return
+                        end tell
+                    end try
+                end repeat
+                set fileSize to 0
+                set curTransferred to 0
+                set curProgress to 0
+                set one to 0
+                set two to 0
+                repeat until one = "Checking"
+                    try
+                        set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
+                        set one to word 1 of lastLine
+                        set two to word 2 of lastLine
+                        set curProgress to word 3 of lastLine
+                        set fileSize to word 5 of lastLine
+                        set curTransferred to word 4 of lastLine
+                        -- deltas
+                        tell me
+                            display dialog "Cloning OpenPlex...
+                            
+" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 2.5 with title "OpenPlex Status"
                             if the button returned of the result is "cancel" then return
                         end tell
                     end try
                 end repeat
                 tell me
                     if one = "Checking" then
-                        display dialog "OpenPlex Cloning Complete, installing..." buttons {"please wait", "cancel"} giving up after 3
+                        display dialog "OpenPlex Cloning Complete, installing..." buttons {"Please Wait"} default button "Please Wait" giving up after 2.5
                         if the button returned of the result is "cancel" then return
                     end if
                 end tell
@@ -192,7 +224,7 @@ script AppDelegate
         try
             do shell script "cd ~/Library/Application\\ Support; rm statusOP"
         end try
-        display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." buttons {"ok"} with title "OpenPlex Status"
+        display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." buttons {"ok"} default button "ok" with title "OpenPlex Status"
         try
             do shell script "killall OpenPlex-installer"
         end try
