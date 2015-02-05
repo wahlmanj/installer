@@ -137,9 +137,9 @@ script AppDelegate
                         set speed to word 9 of lastLine
                         set mb to word 10 of lastLine
                         tell me
-                            display dialog "Cloning OpenPlex. Please wait... 
+                            display dialog "Cloning OpenPlex...
                             
-" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb buttons {"please wait", "cancel"} giving up after 3
+" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb buttons {"please wait", "cancel"} giving up after 3 with title "OpenPlex Status"
                             if the button returned of the result is "cancel" then return
                         end tell
                     end try
@@ -190,7 +190,7 @@ script AppDelegate
         try
             do shell script "cd ~/Library/Application\\ Support; rm statusOP"
         end try
-        display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." with title "OpenPlex Status"
+        display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." buttons {"ok"} with title "OpenPlex Status"
         try
             do shell script "killall OpenPlex-installer"
         end try
