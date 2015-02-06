@@ -128,18 +128,25 @@ script AppDelegate
                 end try
                 do shell script "cd ~/Library/Application\\ Support; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone --progress https://github.com/wahlmanj/OpenPlex.git > ~/Library/Application\\ Support/statusOP 2>&1 &"
                 -- Compressing 
-                set seven to 0
-                repeat until seven = "done"
+                set fileSize to 0
+                set curTransferred to 0
+                set curProgress to 0
+                set one to 0
+                set two to 0
+                repeat until two = "objects"
                     try
                         set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
-                        set seven to word 7 of lastLine
-                    end try
-                end repeat
-                set three to 0
-                repeat until three is greater than "11"
-                    try
-                        set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
-                        set three to word 3 of lastLine
+                        set one to word 1 of lastLine
+                        set two to word 2 of lastLine
+                        set curProgress to word 3 of lastLine
+                        set fileSize to word 5 of lastLine
+                        set curTransferred to word 4 of lastLine
+                        tell me
+                            display dialog "Cloning OpenPlex...
+                            
+" & one & " " & two & " " & curTransferred & " / " & fileSize & " (" & curProgress & "%)" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 2.5 with title "OpenPlex Status"
+                            if the button returned of the result is "cancel" then return
+                        end tell
                     end try
                 end repeat
                 set fileSize to 0
@@ -163,7 +170,7 @@ script AppDelegate
                         tell me
                             display dialog "Cloning OpenPlex...
                             
-" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb & "/s" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 2.5 with title "OpenPlex Status"
+" & one & " " & two & " " & curTransferred & " / " & fileSize & " (" & curProgress & "%)" & " " & speed & " " & mb & "/s" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 2.5 with title "OpenPlex Status"
                             if the button returned of the result is "cancel" then return
                         end tell
                     end try
@@ -185,7 +192,7 @@ script AppDelegate
                         tell me
                             display dialog "Cloning OpenPlex...
                             
-" & one & " " & two & " " & curTransferred & " of " & fileSize & " (" & curProgress & "%)" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 2.5 with title "OpenPlex Status"
+" & one & " " & two & " " & curTransferred & " / " & fileSize & " (" & curProgress & "%)" buttons {"Please Wait", "cancel"} default button "Please Wait" giving up after 2.5 with title "OpenPlex Status"
                             if the button returned of the result is "cancel" then return
                         end tell
                     end try
