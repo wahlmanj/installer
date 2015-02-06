@@ -123,13 +123,23 @@ script AppDelegate
                 try
                     do shell script "rm -R ~/Library/Application\\ Support/OpenPlex" with administrator privileges
                 end try
+                try
+                    do shell script "cd ~/Library/Application\\ Support; rm statusOP" with administrator privileges
+                end try
                 do shell script "cd ~/Library/Application\\ Support; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone --progress https://github.com/wahlmanj/OpenPlex.git > ~/Library/Application\\ Support/statusOP 2>&1 &"
                 -- Compressing 
-                set curProgress to 0
-                repeat until curProgress is greater than "70"
+                set seven to 0
+                repeat until seven = "done"
                     try
                         set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
-                        set curProgress to word 3 of lastLine
+                        set seven to word 7 of lastLine
+                    end try
+                end repeat
+                set three to 0
+                repeat until three is greater than "11"
+                    try
+                        set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
+                        set three to word 3 of lastLine
                     end try
                 end repeat
                 set fileSize to 0
@@ -139,8 +149,7 @@ script AppDelegate
                 set two to 0
                 set speed to 0
                 set mb to 0
-                do shell script "sleep 6"
-                repeat until curProgress is greater than "85"
+                repeat until two = "deltas"
                     try
                         set lastLine to paragraph -1 of (do shell script "cat ~/Library/Application\\ Support/statusOP")
                         set one to word 1 of lastLine
