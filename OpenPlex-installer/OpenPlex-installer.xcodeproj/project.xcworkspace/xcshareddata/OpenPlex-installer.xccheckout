@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3ED4D546-6988-4618-B146-8EBDBBA19E34</string>
+	<string>5A2EA5EA-70B5-4D40-85DA-D9DA9FAACD99</string>
 	<key>IDESourceControlProjectName</key>
 	<string>OpenPlex-installer</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>D9F96160604999BF548A560706E8FAE5D6405FA3</string>
 			<key>IDESourceControlWCCName</key>
-			<string>OpenPlexInstaller</string>
+			<string>installer</string>
 		</dict>
 	</array>
 </dict>

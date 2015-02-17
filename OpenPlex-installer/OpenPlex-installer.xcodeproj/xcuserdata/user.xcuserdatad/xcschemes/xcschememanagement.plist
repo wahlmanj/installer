@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>OpenPlex-installer.xcscheme</key>
+		<key>OpenPlex.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CE26114D1A3ADF100078C3BD</key>
+		<key>DD4F7C0313C30F9F00825C6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
