@@ -18,6 +18,8 @@
 @synthesize darkModeOn,dark;
 @synthesize guideIP,guideURL,updateButton,statusImage;
 @synthesize loginButtonOutlet,myplexButtonOutlet,settingsButtonOutlet,trailersButtonOutlet,updateButtonOutlet;
+@synthesize yourTimer;
+@synthesize clickedInstall_outlet;
 
 -(id)init{
     
@@ -102,13 +104,8 @@
     
 //    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(checkServerStatus) userInfo:nil repeats:YES];
 
-    NSString *guidelocalIP=[[NSString alloc] initWithFormat:@"Local IP :  %@",[self getLocalIPAddress]];
-    NSString *guidecertString=[[NSString alloc] initWithFormat:@"Cert URL :  %@/trailers.cer",[self getLocalIPAddress]];
-    
-    [guideIP setTitleWithMnemonic:guidelocalIP];
+    [guideIP setStringValue:@""];
     [guideIP setFont:[NSFont fontWithName:@"Helvetica Neue" size:14]];
-    [guideURL setTitleWithMnemonic:guidecertString];
-    [guideURL setFont:[NSFont fontWithName:@"Helvetica Neue" size:14]];
 }
 
 -(void)setButtonStatus{
@@ -256,59 +253,31 @@
     [self checkOnOffStates];
     [self setButtonStatus];
 }
+
 - (IBAction)ClickedInstall:(id)sender {
+    [guideIP setStringValue:@"Installing Python and Git\nThis can take some time, so please be patient..."];
+
     NSString* path1 = [[NSBundle mainBundle] pathForResource:@"Part1" ofType:@"scpt"];
     NSURL* url1 = [NSURL fileURLWithPath:path1];NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript1 = [[NSAppleScript alloc] initWithContentsOfURL:url1 error:&errors];
     [appleScript1 executeAndReturnError:nil];
-
     
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(setProgressLabel) userInfo:nil repeats:YES];
-
-/*    NSString* path2 = [[NSBundle mainBundle] pathForResource:@"ProgressLabel" ofType:@"scpt"];
-    NSURL* url2 = [NSURL fileURLWithPath:path2];NSDictionary* errors = [NSDictionary dictionary];
-    NSAppleScript* appleScript2 = [[NSAppleScript alloc] initWithContentsOfURL:url2 error:&errors];
-//    [appleScript2 executeAndReturnError:nil];
-
+    clickedInstall_outlet.enabled=NO;
     
-    NSDictionary* errorDict;
-    NSAppleEventDescriptor *returnDescriptor = NULL;
-
-    returnDescriptor = [appleScript2 executeAndReturnError: &errorDict];
-    returnString = [returnDescriptor stringValue];
-    
-    
-    NSLog(@"returnString:%@",returnString);
-*/
-/* --breaking path to 3rd applescript--
-    
-[self setProgressLabel];
- 
-*/
-    
-    
-//    if ([returnString isEqual:@"PlexConnect is Running"]) {
-//        [statusImage setImage:[NSImage imageNamed:@"statusGreen"]];
-//    } else {
-//        [statusImage setImage:[NSImage imageNamed:@"statusRed"]];
-//    }
-//    NSString *guidelocalIP=[[NSString alloc] initWithFormat:@"Local IP :  %@",[self getLocalIPAddress]];
-    
-
-//    [guideIP setTitleWithMnemonic:returnString];
-//    [guideIP setTitleWithMnemonic:guidelocalIP];
-//    [guideIP setFont:[NSFont fontWithName:@"Helvetica Neue" size:14]];
-/*
-    NSString* path3 = [[NSBundle mainBundle] pathForResource:@"Part3" ofType:@"scpt"];
-    NSURL* url3 = [NSURL fileURLWithPath:path3];
-    NSAppleScript* appleScript3 = [[NSAppleScript alloc] initWithContentsOfURL:url3 error:&errors];
-    [appleScript3 executeAndReturnError:nil];
- */
-    
+    yourTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(setProgressLabel) userInfo:nil repeats:YES];
 }
 
 -(void)setProgressLabel{
     [guideIP setStringValue:[self progressLabelString]];
+    if ([[self progressLabelString] isEqualToString: @"Cloning OpenPlex Complete"]) {
+        [yourTimer invalidate];
+        [guideIP setStringValue:@"Installing OpenPlex into menubar\nThis should be relatively quick, but still be patient..."];
+        NSString* path3 = [[NSBundle mainBundle] pathForResource:@"Part3" ofType:@"scpt"];
+        NSURL* url3 = [NSURL fileURLWithPath:path3];NSDictionary* errors = [NSDictionary dictionary];
+        NSAppleScript* appleScript3 = [[NSAppleScript alloc] initWithContentsOfURL:url3 error:&errors];
+        [appleScript3 executeAndReturnError:nil];
+    }else{
+    }
 }
 
 - (NSString *)progressLabelString
@@ -325,7 +294,7 @@
     returnDescriptor = [appleScript2 executeAndReturnError: &errorDict];
     returnString = [returnDescriptor stringValue];
     
-    NSLog(@"returnString:%@",returnString);
+ //   NSLog(@"returnString:%@",returnString);
     
     return returnString;
 }

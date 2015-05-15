@@ -33,6 +33,9 @@
 - (IBAction)settingButtonAction:(id)sender;
 - (IBAction)ClickedInstall:(id)sender;
 //@property NSString *returnString;
+@property (strong) IBOutlet NSButton *clickedInstall_outlet;
+
+@property(nonatomic, retain) NSTimer *yourTimer;
 
 
 

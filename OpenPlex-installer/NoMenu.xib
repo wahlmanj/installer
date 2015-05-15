@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NoMenu">
             <connections>
+                <outlet property="clickedInstall_outlet" destination="ZFm-lq-Gxn" id="Dph-5u-SP7"/>
                 <outlet property="guideIP" destination="337-12-ICr" id="u9i-oi-ira"/>
                 <outlet property="window" destination="qrc-ml-Ms1" id="Z9I-rF-U5w"/>
             </connections>
