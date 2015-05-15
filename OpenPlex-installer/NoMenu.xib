@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NoMenu">
             <connections>
+                <outlet property="guideIP" destination="337-12-ICr" id="u9i-oi-ira"/>
                 <outlet property="window" destination="qrc-ml-Ms1" id="Z9I-rF-U5w"/>
             </connections>
         </customObject>
@@ -35,7 +36,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="buttonhandlerinstallapp:" target="qo8-lj-syM" id="rT2-df-chY"/>
+                            <action selector="ClickedInstall:" target="-2" id="GVT-Pi-UEO"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" id="Unw-aD-H7F">
@@ -66,10 +67,10 @@ this will take some time depending on your ISP</string>
                             <action selector="terminate:" target="-1" id="8db-Qr-Fh0"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gVM-ty-0m4">
-                        <rect key="frame" x="107" y="42" width="261" height="17"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="337-12-ICr">
+                        <rect key="frame" x="32" y="20" width="410" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Status..." id="edn-A8-d0g">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Progress Label" id="fpd-cK-Eoj">
                             <font key="font" size="12" name="HelveticaNeue-Bold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -77,6 +78,7 @@ this will take some time depending on your ISP</string>
                     </textField>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="294" y="278"/>
         </window>
     </objects>
     <resources>

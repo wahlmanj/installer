@@ -130,8 +130,15 @@ script AppDelegate
             try
                 do shell script "cd ~/Library/Application\\ Support; rm statusOP" with administrator privileges
             end try
+            
+            -- start
+            
             do shell script "cd ~/Library/Application\\ Support; export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; git clone --progress https://github.com/wahlmanj/OpenPlex.git > ~/Library/Application\\ Support/statusOP 2>&1 &"
+
+--Start Dialog
+
             -- Compressing
+            
             set fileSize to 0
             set curTransferred to 0
             set curProgress to 0
@@ -153,6 +160,9 @@ script AppDelegate
                     end tell
                 end try
             end repeat
+            
+            --End
+            
             set fileSize to 0
             set curTransferred to 0
             set curProgress to 0
@@ -179,6 +189,9 @@ script AppDelegate
                     end tell
                 end try
             end repeat
+            
+            -- End
+            
             set fileSize to 0
             set curTransferred to 0
             set curProgress to 0
@@ -201,12 +214,18 @@ script AppDelegate
                     end tell
                 end try
             end repeat
+            
+            -- End
+            
             tell me
                 if one = "Checking" then
                     display dialog "OpenPlex Cloning Complete, installing..." buttons {"Please Wait"} default button "Please Wait" giving up after 2.5
                     if the button returned of the result is "cancel" then return
                 end if
             end tell
+            
+ --finished dialog
+ 
             try
                 do shell script "cp -R ~/Library/Application\\ Support/OpenPlex/update /Applications/PlexConnect"
             end try

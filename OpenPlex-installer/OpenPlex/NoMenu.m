@@ -12,7 +12,9 @@
 @interface NoMenu ()
 @property (assign) IBOutlet NSWindow *window;
 @end
-@implementation NoMenu
+@implementation NoMenu{
+    NSString *returnString;
+}
 @synthesize darkModeOn,dark;
 @synthesize guideIP,guideURL,updateButton,statusImage;
 @synthesize loginButtonOutlet,myplexButtonOutlet,settingsButtonOutlet,trailersButtonOutlet,updateButtonOutlet;
@@ -98,7 +100,7 @@
     [self checkForUpdate];
     [self setButtonStatus];
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(checkServerStatus) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(checkServerStatus) userInfo:nil repeats:YES];
 
     NSString *guidelocalIP=[[NSString alloc] initWithFormat:@"Local IP :  %@",[self getLocalIPAddress]];
     NSString *guidecertString=[[NSString alloc] initWithFormat:@"Cert URL :  %@/trailers.cer",[self getLocalIPAddress]];
@@ -128,6 +130,8 @@
     }
 }
 
+/*
+
 -(void) checkServerStatus{
     NSDictionary* errorDict;
     NSAppleEventDescriptor *returnDescriptor = NULL;
@@ -156,6 +160,8 @@
     }
 }
 
+*/
+ 
 - (NSString *)getLocalIPAddress
 {
     NSArray *ipAddresses = [[NSHost currentHost] addresses];
@@ -249,5 +255,78 @@
     
     [self checkOnOffStates];
     [self setButtonStatus];
+}
+- (IBAction)ClickedInstall:(id)sender {
+    NSString* path1 = [[NSBundle mainBundle] pathForResource:@"Part1" ofType:@"scpt"];
+    NSURL* url1 = [NSURL fileURLWithPath:path1];NSDictionary* errors = [NSDictionary dictionary];
+    NSAppleScript* appleScript1 = [[NSAppleScript alloc] initWithContentsOfURL:url1 error:&errors];
+    [appleScript1 executeAndReturnError:nil];
+
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(setProgressLabel) userInfo:nil repeats:YES];
+
+/*    NSString* path2 = [[NSBundle mainBundle] pathForResource:@"ProgressLabel" ofType:@"scpt"];
+    NSURL* url2 = [NSURL fileURLWithPath:path2];NSDictionary* errors = [NSDictionary dictionary];
+    NSAppleScript* appleScript2 = [[NSAppleScript alloc] initWithContentsOfURL:url2 error:&errors];
+//    [appleScript2 executeAndReturnError:nil];
+
+    
+    NSDictionary* errorDict;
+    NSAppleEventDescriptor *returnDescriptor = NULL;
+
+    returnDescriptor = [appleScript2 executeAndReturnError: &errorDict];
+    returnString = [returnDescriptor stringValue];
+    
+    
+    NSLog(@"returnString:%@",returnString);
+*/
+/* --breaking path to 3rd applescript--
+    
+[self setProgressLabel];
+ 
+*/
+    
+    
+//    if ([returnString isEqual:@"PlexConnect is Running"]) {
+//        [statusImage setImage:[NSImage imageNamed:@"statusGreen"]];
+//    } else {
+//        [statusImage setImage:[NSImage imageNamed:@"statusRed"]];
+//    }
+//    NSString *guidelocalIP=[[NSString alloc] initWithFormat:@"Local IP :  %@",[self getLocalIPAddress]];
+    
+
+//    [guideIP setTitleWithMnemonic:returnString];
+//    [guideIP setTitleWithMnemonic:guidelocalIP];
+//    [guideIP setFont:[NSFont fontWithName:@"Helvetica Neue" size:14]];
+/*
+    NSString* path3 = [[NSBundle mainBundle] pathForResource:@"Part3" ofType:@"scpt"];
+    NSURL* url3 = [NSURL fileURLWithPath:path3];
+    NSAppleScript* appleScript3 = [[NSAppleScript alloc] initWithContentsOfURL:url3 error:&errors];
+    [appleScript3 executeAndReturnError:nil];
+ */
+    
+}
+
+-(void)setProgressLabel{
+    [guideIP setStringValue:[self progressLabelString]];
+}
+
+- (NSString *)progressLabelString
+{
+    NSString* path2 = [[NSBundle mainBundle] pathForResource:@"ProgressLabel" ofType:@"scpt"];
+    NSURL* url2 = [NSURL fileURLWithPath:path2];NSDictionary* errors = [NSDictionary dictionary];
+    NSAppleScript* appleScript2 = [[NSAppleScript alloc] initWithContentsOfURL:url2 error:&errors];
+    //    [appleScript2 executeAndReturnError:nil];
+    
+    
+    NSDictionary* errorDict;
+    NSAppleEventDescriptor *returnDescriptor = NULL;
+    
+    returnDescriptor = [appleScript2 executeAndReturnError: &errorDict];
+    returnString = [returnDescriptor stringValue];
+    
+    NSLog(@"returnString:%@",returnString);
+    
+    return returnString;
 }
 @end

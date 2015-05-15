@@ -31,5 +31,9 @@
 - (IBAction)myplexButtonAction:(id)sender;
 @property (strong) IBOutlet NSButton *settingsButtonOutlet;
 - (IBAction)settingButtonAction:(id)sender;
+- (IBAction)ClickedInstall:(id)sender;
+//@property NSString *returnString;
+
+
 
 @end
