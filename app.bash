@@ -36,4 +36,25 @@ ditto -xk OpenPlex.zip /Applications
 rm OpenPlex.zip
 open OpenPlex.app
 echo $OSX_VERS
+elif [ "$OSX_VERS" -eq 11 ]; then
+cd /Applications
+curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.6/OpenPlex.zip > OpenPlex.zip
+ditto -xk OpenPlex.zip /Applications
+rm OpenPlex.zip
+open OpenPlex.app
+echo $OSX_VERS
+elif [ "$OSX_VERS" -eq 12 ]; then
+cd /Applications
+curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.6/OpenPlex.zip > OpenPlex.zip
+ditto -xk OpenPlex.zip /Applications
+rm OpenPlex.zip
+open OpenPlex.app
+echo $OSX_VERS
+elif [ "$OSX_VERS" -eq 13 ]; then
+cd /Applications
+curl -L https://github.com/wahlmanj/OpenPlex/raw/master/10.6/OpenPlex.zip > OpenPlex.zip
+ditto -xk OpenPlex.zip /Applications
+rm OpenPlex.zip
+open OpenPlex.app
+echo $OSX_VERS
 fi
