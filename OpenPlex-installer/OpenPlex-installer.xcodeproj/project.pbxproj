@@ -381,7 +381,7 @@
 		DD4F7BFB13C30F9F00825C6E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = DD4F7BFE13C30F9F00825C6E /* Build configuration list for PBXProject "OpenPlex-installer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -500,6 +500,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -564,6 +565,7 @@
 				GCC_PREFIX_HEADER = "Popup/OpenPlex-installer-Prefix.pch";
 				INFOPLIST_FILE = "Popup/OpenPlex-installer-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_BUNDLE_IDENTIFIER = wahlman.j;
 				PRODUCT_NAME = "OpenPlex-installer";
 				WRAPPER_EXTENSION = app;
 			};
@@ -579,6 +581,7 @@
 				GCC_PREFIX_HEADER = "Popup/OpenPlex-installer-Prefix.pch";
 				INFOPLIST_FILE = "Popup/OpenPlex-installer-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_BUNDLE_IDENTIFIER = wahlman.j;
 				PRODUCT_NAME = "OpenPlex-installer";
 				WRAPPER_EXTENSION = app;
 			};
