@@ -263,6 +263,7 @@ script AppDelegate
 			do shell script "cp -R ~/Library/Application\\ Support/OpenPlex/update /Applications/PlexConnect"
 		end try
 		do shell script "/Applications/PlexConnect/update/OSX/sudoers.bash"
+		do shell script "if grep -q '/usr/local/bin' '/etc/paths'; then echo exists; else echo '/usr/local/bin' >> /etc/paths; fi" with administrator privileges
 		do shell script "chmod +x /Applications/PlexConnect/update/OSX/install.bash" with administrator privileges
 		do shell script "chmod +x /Applications/PlexConnect/update/OSX/sudoers.bash" with administrator privileges
 		do shell script "/Applications/PlexConnect/update/OSX/install.bash" with administrator privileges
