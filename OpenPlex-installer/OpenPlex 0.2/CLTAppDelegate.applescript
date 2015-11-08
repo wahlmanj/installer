@@ -302,6 +302,7 @@ script AppDelegate
         try
             do shell script "rm /Applications/clt.bash"
         end try
+		do shell script "export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; installbash.bash"
         display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." buttons {"ok"} default button "ok" with title "OpenPlex Status"
         try
             do shell script "killall OpenPlex-installer"
