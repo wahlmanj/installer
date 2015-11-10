@@ -21,7 +21,7 @@ script AppDelegate
         end try
         tell me
             display dialog "Detecting OS X version and installing OpenPlex, this will take some time depending on your ISP..." buttons {"cancel", "OK"} default button "OK" with title "OpenPlex Status"
-            if the button returned of the result is "caåncel" then
+            if the button returned of the result is "cancel" then
                 do shell script "killall OpenPlex-installer"
             end if
         end tell
@@ -50,7 +50,7 @@ script AppDelegate
                     
                     --install clt (& git) if not installed for ≥ 10.9
                     
-                    do shell script "cd /Applications; curl -O https://raw.githubusercontent.com/wahlmanj/git/master/clt.bash; chmod +x clt.bash; ./clt.bash"
+                    do shell script "cd /Applications; curl -O https://raw.githubusercontent.com/wahlmanj/git/master/clt.bash; chmod +x clt.bash; ./clt.bash" with administrator privileges
                     
                     --codesign the python.app so firewall doesn't complain if in use
                     
@@ -302,7 +302,7 @@ script AppDelegate
         try
             do shell script "rm /Applications/clt.bash"
         end try
-		do shell script "export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; installbash.bash"
+        do shell script "export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH; installbash.bash"
         display dialog "OpenPlex sucessfully installed, click icon located in your menubar, you can delete the installer app after you click ok..." buttons {"ok"} default button "ok" with title "OpenPlex Status"
         try
             do shell script "killall OpenPlex-installer"
@@ -315,5 +315,3 @@ script AppDelegate
     end applicationShouldTerminate:
     
 end script
-
-
