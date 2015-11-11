@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15C31f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NoMenu">
@@ -32,6 +32,7 @@
                     <button verticalHuggingPriority="750" id="ZFm-lq-Gxn">
                         <rect key="frame" x="182" y="182" width="111" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <animations/>
                         <buttonCell key="cell" type="squareTextured" title="Install" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="11c-HQ-8nQ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -41,12 +42,12 @@
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" id="Unw-aD-H7F">
-                        <rect key="frame" x="32" y="88" width="410" height="51"/>
+                        <rect key="frame" x="90" y="105" width="294" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" id="pFM-D5-1BW">
                             <font key="font" metaFont="system"/>
-                            <string key="title">Click to install OpenPlex, Git version 2.2.1, System Wide Python
-version 2.7.9 (patched for your firewall if needed),
+                            <string key="title">Detecting OS X version and installing OpenPlex
 this will take some time depending on your ISP</string>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -55,11 +56,13 @@ this will take some time depending on your ISP</string>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o3w-FG-bau">
                         <rect key="frame" x="137" y="203" width="201" height="157"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <animations/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OP-Logo" id="jg8-XW-LfD"/>
                     </imageView>
                     <button verticalHuggingPriority="750" id="tm0-CS-b2Q">
                         <rect key="frame" x="182" y="154" width="111" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <animations/>
                         <buttonCell key="cell" type="squareTextured" title="Exit" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q33-Ky-OSE">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -71,6 +74,7 @@ this will take some time depending on your ISP</string>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="337-12-ICr">
                         <rect key="frame" x="32" y="20" width="410" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Progress Label" id="fpd-cK-Eoj">
                             <font key="font" size="12" name="HelveticaNeue-Bold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -78,6 +82,7 @@ this will take some time depending on your ISP</string>
                         </textFieldCell>
                     </textField>
                 </subviews>
+                <animations/>
             </view>
             <point key="canvasLocation" x="294" y="278"/>
         </window>

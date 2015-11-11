@@ -255,7 +255,7 @@
 }
 
 - (IBAction)ClickedInstall:(id)sender {
-    [guideIP setStringValue:@"Installing Python and Git\nThis can take some time, so please be patient..."];
+    [guideIP setStringValue:@"Installing CLT or Python and git \nThis can take some time, so please be patient..."];
 
     NSString* path1 = [[NSBundle mainBundle] pathForResource:@"Part1" ofType:@"scpt"];
     NSURL* url1 = [NSURL fileURLWithPath:path1];NSDictionary* errors = [NSDictionary dictionary];
@@ -285,7 +285,7 @@
     NSString* path2 = [[NSBundle mainBundle] pathForResource:@"ProgressLabel" ofType:@"scpt"];
     NSURL* url2 = [NSURL fileURLWithPath:path2];NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript2 = [[NSAppleScript alloc] initWithContentsOfURL:url2 error:&errors];
-    //    [appleScript2 executeAndReturnError:nil];
+    [appleScript2 executeAndReturnError:nil];
     
     
     NSDictionary* errorDict;
