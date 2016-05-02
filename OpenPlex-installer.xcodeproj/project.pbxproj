@@ -11,8 +11,6 @@
 		CE994F361CD6C3460057332B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE994F351CD6C3460057332B /* main.m */; };
 		CE994F381CD6C3460057332B /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = CE994F371CD6C3460057332B /* AppDelegate.applescript */; };
 		CE994F3A1CD6C3460057332B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE994F391CD6C3460057332B /* Assets.xcassets */; };
-		CE994F4E1CD6C3E40057332B /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE994F4A1CD6C3E40057332B /* ApplicationDelegate.m */; };
-		CE994F4F1CD6C3E40057332B /* NoMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CE994F4C1CD6C3E40057332B /* NoMenu.m */; };
 		CE994F541CD6C3F20057332B /* Part1.scpt in Resources */ = {isa = PBXBuildFile; fileRef = CE994F501CD6C3F20057332B /* Part1.scpt */; };
 		CE994F551CD6C3F20057332B /* ProgressLabel.scpt in Resources */ = {isa = PBXBuildFile; fileRef = CE994F511CD6C3F20057332B /* ProgressLabel.scpt */; };
 		CE994F581CD6C40E0057332B /* NoMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE994F571CD6C40E0057332B /* NoMenu.xib */; };
@@ -25,6 +23,8 @@
 		CE994F881CD6C41D0057332B /* opicon_<1024x1024>.png in Resources */ = {isa = PBXBuildFile; fileRef = CE994F641CD6C41D0057332B /* opicon_<1024x1024>.png */; };
 		CE994F891CD6C41D0057332B /* OP-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE994F651CD6C41D0057332B /* OP-Logo.png */; };
 		CE994FA31CD6C9A80057332B /* Part3.scpt in Resources */ = {isa = PBXBuildFile; fileRef = CE994FA21CD6C9A80057332B /* Part3.scpt */; };
+		CE9950CD1CD6E49E0057332B /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9950CA1CD6E49E0057332B /* ApplicationDelegate.m */; };
+		CE9950CE1CD6E49E0057332B /* NoMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9950CC1CD6E49E0057332B /* NoMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +34,6 @@
 		CE994F371CD6C3460057332B /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
 		CE994F391CD6C3460057332B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE994F3E1CD6C3460057332B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE994F491CD6C3E40057332B /* ApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
-		CE994F4A1CD6C3E40057332B /* ApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDelegate.m; sourceTree = "<group>"; };
-		CE994F4B1CD6C3E40057332B /* NoMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoMenu.h; path = ../OpenPlex/NoMenu.h; sourceTree = "<group>"; };
-		CE994F4C1CD6C3E40057332B /* NoMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoMenu.m; path = ../OpenPlex/NoMenu.m; sourceTree = "<group>"; };
 		CE994F501CD6C3F20057332B /* Part1.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = Part1.scpt; sourceTree = "<group>"; };
 		CE994F511CD6C3F20057332B /* ProgressLabel.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProgressLabel.scpt; sourceTree = "<group>"; };
 		CE994F571CD6C40E0057332B /* NoMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoMenu.xib; sourceTree = "<group>"; };
@@ -50,6 +46,10 @@
 		CE994F641CD6C41D0057332B /* opicon_<1024x1024>.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opicon_<1024x1024>.png"; sourceTree = "<group>"; };
 		CE994F651CD6C41D0057332B /* OP-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OP-Logo.png"; sourceTree = "<group>"; };
 		CE994FA21CD6C9A80057332B /* Part3.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; name = Part3.scpt; path = "OpenPlex-installer/scripts/Part3.scpt"; sourceTree = SOURCE_ROOT; };
+		CE9950C91CD6E49E0057332B /* ApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationDelegate.h; path = Controllers/ApplicationDelegate.h; sourceTree = "<group>"; };
+		CE9950CA1CD6E49E0057332B /* ApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationDelegate.m; path = Controllers/ApplicationDelegate.m; sourceTree = "<group>"; };
+		CE9950CB1CD6E49E0057332B /* NoMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoMenu.h; path = Controllers/NoMenu.h; sourceTree = "<group>"; };
+		CE9950CC1CD6E49E0057332B /* NoMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoMenu.m; path = Controllers/NoMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +93,10 @@
 		CE994F331CD6C3460057332B /* OpenPlex-installer */ = {
 			isa = PBXGroup;
 			children = (
+				CE9950C91CD6E49E0057332B /* ApplicationDelegate.h */,
+				CE9950CA1CD6E49E0057332B /* ApplicationDelegate.m */,
+				CE9950CB1CD6E49E0057332B /* NoMenu.h */,
+				CE9950CC1CD6E49E0057332B /* NoMenu.m */,
 				CE994F371CD6C3460057332B /* AppDelegate.applescript */,
 				CE994F391CD6C3460057332B /* Assets.xcassets */,
 				CE994F571CD6C40E0057332B /* NoMenu.xib */,
@@ -123,10 +127,6 @@
 		CE994F4D1CD6C3E40057332B /* OpenPlex Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE994F491CD6C3E40057332B /* ApplicationDelegate.h */,
-				CE994F4A1CD6C3E40057332B /* ApplicationDelegate.m */,
-				CE994F4B1CD6C3E40057332B /* NoMenu.h */,
-				CE994F4C1CD6C3E40057332B /* NoMenu.m */,
 			);
 			name = "OpenPlex Controllers";
 			path = "../../../Documents/installer/OpenPlex-installer/Popup";
@@ -240,9 +240,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE994F381CD6C3460057332B /* AppDelegate.applescript in Sources */,
-				CE994F4F1CD6C3E40057332B /* NoMenu.m in Sources */,
+				CE9950CE1CD6E49E0057332B /* NoMenu.m in Sources */,
 				CE994F361CD6C3460057332B /* main.m in Sources */,
-				CE994F4E1CD6C3E40057332B /* ApplicationDelegate.m in Sources */,
+				CE9950CD1CD6E49E0057332B /* ApplicationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

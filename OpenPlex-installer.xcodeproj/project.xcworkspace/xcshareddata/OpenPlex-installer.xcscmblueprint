@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D9F96160604999BF548A560706E8FAE5D6405FA3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B0F3CC8E1B03CF11BA4F9BE8BFD08D33454A9967" : 0,
+    "D9F96160604999BF548A560706E8FAE5D6405FA3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "69BD7E8D-C91A-4CDB-9CC6-A54BD80C170A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B0F3CC8E1B03CF11BA4F9BE8BFD08D33454A9967" : "OpenPlex\/",
+    "D9F96160604999BF548A560706E8FAE5D6405FA3" : "installer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "OpenPlex-installer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OpenPlex-installer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wahlmanj\/OpenPlex.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B0F3CC8E1B03CF11BA4F9BE8BFD08D33454A9967"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wahlmanj\/installer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D9F96160604999BF548A560706E8FAE5D6405FA3"
+    }
+  ]
+}
