@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15C31f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15F28b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NoMenu">
-            <connections>
-                <outlet property="clickedInstall_outlet" destination="ZFm-lq-Gxn" id="Dph-5u-SP7"/>
-                <outlet property="guideIP" destination="337-12-ICr" id="u9i-oi-ira"/>
-                <outlet property="window" destination="qrc-ml-Ms1" id="Z9I-rF-U5w"/>
-            </connections>
-        </customObject>
+        <customObject id="-2" userLabel="File's Owner" customClass="NoMenu"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="yA6-dK-NsI" userLabel="Application Delegate" customClass="ApplicationDelegate"/>
         <customObject id="Y8d-nb-MOE" userLabel="NoMenu" customClass="NoMenu">
             <connections>
-                <outlet property="window" destination="qrc-ml-Ms1" id="zWj-OH-cc4"/>
+                <outlet property="clickedInstall_outlet" destination="ZFm-lq-Gxn" id="mBQ-Tm-TBS"/>
+                <outlet property="guideIP" destination="337-12-ICr" id="abg-9h-hJ8"/>
+                <outlet property="window" destination="qrc-ml-Ms1" id="ick-sf-AGn"/>
             </connections>
         </customObject>
         <customObject id="qo8-lj-syM" customClass="AppDelegate"/>
@@ -38,7 +34,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="ClickedInstall:" target="-2" id="GVT-Pi-UEO"/>
+                            <action selector="ClickedInstall:" target="Y8d-nb-MOE" id="IL5-HW-L7C"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" id="Unw-aD-H7F">
@@ -75,7 +71,7 @@ this will take some time depending on your ISP</string>
                         <rect key="frame" x="32" y="20" width="410" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Progress Label" id="fpd-cK-Eoj">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" id="fpd-cK-Eoj">
                             <font key="font" size="12" name="HelveticaNeue-Bold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -84,7 +80,7 @@ this will take some time depending on your ISP</string>
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="294" y="278"/>
+            <point key="canvasLocation" x="437" y="210"/>
         </window>
     </objects>
     <resources>

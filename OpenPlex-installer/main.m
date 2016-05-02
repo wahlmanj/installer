@@ -1,9 +1,9 @@
 //
 //  main.m
-//  OpenPlex
+//  OpenPlex-installer
 //
-//  Created by user on 1/4/15.
-//  Copyright (c) 2015 OpenPlex. All rights reserved.
+//  Created by user on 5/1/16.
+//  Copyright © 2016 user. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
