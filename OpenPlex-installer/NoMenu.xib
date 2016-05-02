@@ -38,7 +38,7 @@
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" id="Unw-aD-H7F">
-                        <rect key="frame" x="90" y="105" width="294" height="34"/>
+                        <rect key="frame" x="73" y="105" width="335" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" id="pFM-D5-1BW">
