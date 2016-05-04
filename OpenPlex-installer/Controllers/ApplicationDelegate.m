@@ -62,6 +62,7 @@ BOOL updateAvailable;
  //   [self checkForUpdateSetBool];
 }
 
+/*
 -(void)checkOnOffStates{
     NSURL *path = [NSURL URLWithString:@"/Applications/plexconnect_Backup"];
     NSDirectoryEnumerator *directoryEnumerator = [[NSFileManager defaultManager] enumeratorAtURL:path includingPropertiesForKeys:@[] options:NSDirectoryEnumerationSkipsHiddenFiles|NSDirectoryEnumerationSkipsPackageDescendants|NSDirectoryEnumerationSkipsSubdirectoryDescendants errorHandler:nil];
@@ -110,6 +111,6 @@ BOOL updateAvailable;
     }
 //        NSLog(@"updateCheck");
 }
-
+*/
 
 @end
