@@ -23,11 +23,11 @@
     NSString* path1 = [[NSBundle mainBundle] pathForResource:@"Part1" ofType:@"scpt"];
     NSURL* url1 = [NSURL fileURLWithPath:path1];NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript1 = [[NSAppleScript alloc] initWithContentsOfURL:url1 error:&errors];
-    [appleScript1 executeAndReturnError:nil];
+    [appleScript1 executeAndReturnError:NULL];
     
     clickedInstall_outlet.enabled=NO;
     
-    yourTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(setProgressLabel) userInfo:nil repeats:YES];
+    yourTimer=[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(setProgressLabel) userInfo:NULL repeats:YES];
 }
 
 -(void)setProgressLabel{
@@ -38,7 +38,7 @@
         NSString* path3 = [[NSBundle mainBundle] pathForResource:@"Part3" ofType:@"scpt"];
         NSURL* url3 = [NSURL fileURLWithPath:path3];NSDictionary* errors = [NSDictionary dictionary];
         NSAppleScript* appleScript3 = [[NSAppleScript alloc] initWithContentsOfURL:url3 error:&errors];
-        [appleScript3 executeAndReturnError:nil];
+        [appleScript3 executeAndReturnError:NULL];
     }else{
     }
 }
@@ -48,7 +48,7 @@
     NSString* path2 = [[NSBundle mainBundle] pathForResource:@"ProgressLabel" ofType:@"scpt"];
     NSURL* url2 = [NSURL fileURLWithPath:path2];NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript2 = [[NSAppleScript alloc] initWithContentsOfURL:url2 error:&errors];
-    [appleScript2 executeAndReturnError:nil];
+    [appleScript2 executeAndReturnError:NULL];
     
     
     NSDictionary* errorDict;
@@ -56,8 +56,6 @@
     
     returnDescriptor = [appleScript2 executeAndReturnError: &errorDict];
     returnString = [returnDescriptor stringValue];
-    
- //   NSLog(@"returnString:%@",returnString);
     
     return returnString;
 }
