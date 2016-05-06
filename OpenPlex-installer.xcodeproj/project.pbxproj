@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0F49271CDC4C17001A3A60 /* ProgressLabel.scpt in Resources */ = {isa = PBXBuildFile; fileRef = CE0F49261CDC4C17001A3A60 /* ProgressLabel.scpt */; };
 		CE7ADFB51CDC473C003B52C4 /* Part3.scpt in Resources */ = {isa = PBXBuildFile; fileRef = CE7ADFB31CDC473C003B52C4 /* Part3.scpt */; };
-		CE7ADFB61CDC473C003B52C4 /* ProgressLabel.scpt in Resources */ = {isa = PBXBuildFile; fileRef = CE7ADFB41CDC473C003B52C4 /* ProgressLabel.scpt */; };
 		CE994F321CD6C3460057332B /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE994F311CD6C3460057332B /* AppleScriptObjC.framework */; };
 		CE994F361CD6C3460057332B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE994F351CD6C3460057332B /* main.m */; };
 		CE994F381CD6C3460057332B /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = CE994F371CD6C3460057332B /* AppDelegate.applescript */; };
@@ -27,8 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0F49261CDC4C17001A3A60 /* ProgressLabel.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProgressLabel.scpt; sourceTree = "<group>"; };
 		CE7ADFB31CDC473C003B52C4 /* Part3.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = Part3.scpt; sourceTree = "<group>"; };
-		CE7ADFB41CDC473C003B52C4 /* ProgressLabel.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProgressLabel.scpt; sourceTree = "<group>"; };
 		CE994F2E1CD6C3460057332B /* OpenPlex-installer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenPlex-installer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE994F311CD6C3460057332B /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		CE994F351CD6C3460057332B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 			children = (
 				CE994F501CD6C3F20057332B /* Part1.scpt */,
 				CE7ADFB31CDC473C003B52C4 /* Part3.scpt */,
-				CE7ADFB41CDC473C003B52C4 /* ProgressLabel.scpt */,
+				CE0F49261CDC4C17001A3A60 /* ProgressLabel.scpt */,
 			);
 			name = scripts;
 			path = "../../../Documents/installer/OpenPlex-installer/scripts";
@@ -222,7 +222,7 @@
 				CE994F881CD6C41D0057332B /* opicon_<1024x1024>.png in Resources */,
 				CE994F851CD6C41D0057332B /* opicon_<128x128>.png in Resources */,
 				CE994F541CD6C3F20057332B /* Part1.scpt in Resources */,
-				CE7ADFB61CDC473C003B52C4 /* ProgressLabel.scpt in Resources */,
+				CE0F49271CDC4C17001A3A60 /* ProgressLabel.scpt in Resources */,
 				CE994F581CD6C40E0057332B /* NoMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

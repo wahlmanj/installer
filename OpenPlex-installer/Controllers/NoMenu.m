@@ -48,7 +48,5 @@
     returnDescriptor = [appleScript2 executeAndReturnError: &errorDict];
     returnString = [returnDescriptor stringValue];
     return returnString;
-    
-    
 }
 @end
