@@ -1,5 +1,5 @@
 /*
- --  OpenPlex 0.4.2
+ --  OpenPlex-installer
  --
  --  Originally Designed by CyberGhost84 on 5/02/14.
  --  Originally Coded by Wahlman.j on 5/02/14.
@@ -8,12 +8,10 @@
 
 #import "NoMenu.h"
 
-@interface NoMenu ()
-@end
 @implementation NoMenu{
     NSString *returnString;
 }
-@synthesize guideIP,guideURL;
+@synthesize guideIP;
 @synthesize yourTimer;
 @synthesize clickedInstall_outlet;
 
@@ -24,14 +22,14 @@
     NSURL* url1 = [NSURL fileURLWithPath:path1];NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript1 = [[NSAppleScript alloc] initWithContentsOfURL:url1 error:&errors];
     [appleScript1 executeAndReturnError:NULL];
+   // clickedInstall_outlet.enabled=NO;
+    yourTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(setProgressLabel) userInfo:nil repeats:YES];
     
-    clickedInstall_outlet.enabled=NO;
-    
-    yourTimer=[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(setProgressLabel) userInfo:NULL repeats:YES];
 }
 
 -(void)setProgressLabel{
     [guideIP setStringValue:[self progressLabelString]];
+    
     if ([[self progressLabelString] isEqualToString: @"Cloning OpenPlex Complete"]) {
         [yourTimer invalidate];
         [guideIP setStringValue:@"Installing OpenPlex into menubar\nThis should be relatively quick, but still be patient..."];
@@ -45,6 +43,7 @@
 
 - (NSString *)progressLabelString
 {
+    
     NSString* path2 = [[NSBundle mainBundle] pathForResource:@"ProgressLabel" ofType:@"scpt"];
     NSURL* url2 = [NSURL fileURLWithPath:path2];NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript2 = [[NSAppleScript alloc] initWithContentsOfURL:url2 error:&errors];
@@ -58,5 +57,7 @@
     returnString = [returnDescriptor stringValue];
     
     return returnString;
+    
+    
 }
 @end
