@@ -11,6 +11,7 @@
 @interface NoMenu : NSWindowController <NSApplicationDelegate>
 @property (strong) IBOutlet NSTextField *guideIP;
 - (IBAction)ClickedInstall:(id)sender;
+@property (strong) IBOutlet NSButton *clickedInstall_outlet;
 @property(nonatomic, retain) NSTimer *yourTimer;
 
 @end
