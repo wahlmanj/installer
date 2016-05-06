@@ -13,7 +13,6 @@
 }
 @synthesize guideIP;
 @synthesize yourTimer;
-@synthesize clickedInstall_outlet;
 
 - (IBAction)ClickedInstall:(id)sender {
     [guideIP setStringValue:@"Installing CLT or Python and git \nThis can take some time, so please be patient..."];
@@ -22,7 +21,6 @@
     NSURL* url1 = [NSURL fileURLWithPath:path1];NSDictionary* errors = [NSDictionary dictionary];
     NSAppleScript* appleScript1 = [[NSAppleScript alloc] initWithContentsOfURL:url1 error:&errors];
     [appleScript1 executeAndReturnError:NULL];
-   // clickedInstall_outlet.enabled=NO;
     yourTimer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(setProgressLabel) userInfo:nil repeats:YES];
     
 }
