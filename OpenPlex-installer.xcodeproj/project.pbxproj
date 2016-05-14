@@ -24,6 +24,7 @@
 		CE994F881CD6C41D0057332B /* opicon_<1024x1024>.png in Resources */ = {isa = PBXBuildFile; fileRef = CE994F641CD6C41D0057332B /* opicon_<1024x1024>.png */; };
 		CE994F891CD6C41D0057332B /* OP-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE994F651CD6C41D0057332B /* OP-Logo.png */; };
 		CE9950CE1CD6E49E0057332B /* NoMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9950CC1CD6E49E0057332B /* NoMenu.m */; };
+		DBB05C751CE71B75001B8BCA /* OpenPlexLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = DBB05C741CE71B75001B8BCA /* OpenPlexLogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		CE994F651CD6C41D0057332B /* OP-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OP-Logo.png"; sourceTree = "<group>"; };
 		CE9950CB1CD6E49E0057332B /* NoMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoMenu.h; path = Controllers/NoMenu.h; sourceTree = "<group>"; };
 		CE9950CC1CD6E49E0057332B /* NoMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoMenu.m; path = Controllers/NoMenu.m; sourceTree = "<group>"; };
+		DBB05C741CE71B75001B8BCA /* OpenPlexLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OpenPlexLogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		CE994F7C1CD6C41D0057332B /* OpenPlexIcons */ = {
 			isa = PBXGroup;
 			children = (
+				DBB05C741CE71B75001B8BCA /* OpenPlexLogo.png */,
 				CE994F5E1CD6C41D0057332B /* opicon_<16x16>.png */,
 				CE994F5F1CD6C41D0057332B /* opicon_<32x32>.png */,
 				CE994F601CD6C41D0057332B /* opicon_<64x64>.png */,
@@ -216,6 +219,7 @@
 				CE994F871CD6C41D0057332B /* opicon_<512x512>.png in Resources */,
 				CE994F821CD6C41D0057332B /* opicon_<16x16>.png in Resources */,
 				CE994F831CD6C41D0057332B /* opicon_<32x32>.png in Resources */,
+				DBB05C751CE71B75001B8BCA /* OpenPlexLogo.png in Resources */,
 				CE994F891CD6C41D0057332B /* OP-Logo.png in Resources */,
 				CE994F3A1CD6C3460057332B /* Assets.xcassets in Resources */,
 				CE994F861CD6C41D0057332B /* opicon_<256x256>.png in Resources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15F28b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NoMenu"/>
@@ -16,30 +16,39 @@
             </connections>
         </customObject>
         <customObject id="qo8-lj-syM" customClass="AppDelegate"/>
-        <window title="OpenPlex-installer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="qrc-ml-Ms1">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+        <window title="OpenPlex" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="qrc-ml-Ms1">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
+            <rect key="contentRect" x="335" y="390" width="483" height="318"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="daO-Ft-eHj">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="483" height="318"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" id="ZFm-lq-Gxn">
-                        <rect key="frame" x="182" y="182" width="111" height="23"/>
+                        <rect key="frame" x="135" y="80" width="93" height="41"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <animations/>
                         <buttonCell key="cell" type="squareTextured" title="Install" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="11c-HQ-8nQ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="system" size="14"/>
                         </buttonCell>
                         <connections>
                             <action selector="ClickedInstall:" target="Y8d-nb-MOE" id="IL5-HW-L7C"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" id="Unw-aD-H7F">
-                        <rect key="frame" x="73" y="105" width="335" height="34"/>
+                    <button verticalHuggingPriority="750" id="tm0-CS-b2Q">
+                        <rect key="frame" x="260" y="79" width="92" height="42"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <animations/>
+                        <buttonCell key="cell" type="squareTextured" title="Close" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q33-Ky-OSE">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="14"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="terminate:" target="-1" id="8db-Qr-Fh0"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" id="Unw-aD-H7F">
+                        <rect key="frame" x="74" y="133" width="335" height="34"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" id="pFM-D5-1BW">
                             <font key="font" metaFont="system"/>
                             <string key="title">Detecting OS X version and installing OpenPlex
@@ -49,40 +58,25 @@ this will take some time depending on your ISP</string>
                         </textFieldCell>
                     </textField>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="o3w-FG-bau">
-                        <rect key="frame" x="137" y="203" width="201" height="157"/>
+                        <rect key="frame" x="159" y="175" width="165" height="123"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <animations/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OP-Logo" id="jg8-XW-LfD"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="OpenPlexLogo" id="jg8-XW-LfD"/>
                     </imageView>
-                    <button verticalHuggingPriority="750" id="tm0-CS-b2Q">
-                        <rect key="frame" x="182" y="154" width="111" height="23"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <animations/>
-                        <buttonCell key="cell" type="squareTextured" title="Exit" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q33-Ky-OSE">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="terminate:" target="-1" id="8db-Qr-Fh0"/>
-                        </connections>
-                    </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="337-12-ICr">
-                        <rect key="frame" x="32" y="31" width="410" height="48"/>
+                        <rect key="frame" x="36" y="11" width="410" height="45"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" id="fpd-cK-Eoj">
                             <font key="font" size="12" name="HelveticaNeue-Bold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                 </subviews>
-                <animations/>
             </view>
-            <point key="canvasLocation" x="437" y="210"/>
+            <point key="canvasLocation" x="438.5" y="189"/>
         </window>
     </objects>
     <resources>
-        <image name="OP-Logo" width="500" height="500"/>
+        <image name="OpenPlexLogo" width="1024" height="1024"/>
     </resources>
 </document>
